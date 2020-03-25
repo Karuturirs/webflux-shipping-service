@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: new-shipping-service
+    labels:
+      com.shipping.analyser: "NSA app container"
+    ports:
+      - "8080:8080"
+    links:
+      - db
+    networks:
+      - net-mongo
+  db:
+    image: mongo:3.6.11-stretch
+    container_name: nsa-mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mockbird
+      - MONGO_INITDB_ROOT_PASSWORD=Ilovethisbird
+      - MONGO_INITDB_DATABASE=admin
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./scripts/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      - shipping-data:/data/db
+    command: mongod --auth
+    networks:
+      - net-mongo
+volumes:
+  shipping-data:
+networks:
+  net-mongo:
+    driver: "bridge"
