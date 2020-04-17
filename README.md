@@ -28,7 +28,8 @@ NSA is an Reactive Rest API micro service that helps business to find out if the
 
 ### Start Application
 -------------------------------------
-Step 1: Download the code base.
+Step 1: Download the code base
+
 Step 2: Got to the project root folder.
 
 ```cmd
