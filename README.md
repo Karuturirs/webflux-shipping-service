@@ -23,19 +23,25 @@ NSA is an Reactive Rest API micro service that helps business to find out if the
 ### Pre-Requirements.
 -------------------------------------
     Docker should be installed in laptop.
+    maven 3.2+ up.
+    java 8+
 
 ### Start Application
 -------------------------------------
 Step 1: Download the code base.
 Step 2: Got to the project root folder.
 
-    cd new-shipping-analyser
+    cd webflux-shipping-analyser
 
-Step 3: Run docker compose command
+Step 3: Run mvn installation 
+     ```
+     mvn clean install
+     ```
+Step 4: Run docker compose command
 
     docker-compose up
 
-Step 4: Run
+Step 5: Run
         ```
         curl http://localhost:8080/actuator/health
         ```
