@@ -31,15 +31,21 @@ NSA is an Reactive Rest API micro service that helps business to find out if the
 Step 1: Download the code base.
 Step 2: Got to the project root folder.
 
-    cd webflux-shipping-analyser
+```cmd
+$ cd webflux-shipping-analyser
+```
 
-Step 3: Run mvn installation 
-     ```
-     mvn clean install
-     ```
+Step 3: Run mvn installation. 
+
+```cmd
+$ mvn clean install
+```
+
 Step 4: Run docker compose command
 
-    docker-compose up
+```cmd
+$ docker-compose up
+```
 
 Step 5: Run
         ```
@@ -131,7 +137,7 @@ By default when you start the application there won't be any data stored.
    	"categoryId": "1",
    	"price": 100.00
    }'
-    ```
+   ```
 
 Should get value true for all the api done for the above.
 
